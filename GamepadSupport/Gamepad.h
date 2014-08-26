@@ -1,3 +1,8 @@
+/* Copyright (c) 2014 Krzysztof Pachulski
+* License: The MIT License (MIT)
+* MIT License page: http://opensource.org/licenses/MIT
+*/
+
 #ifndef __GAMEPAD_H__
 #define __GAMEPAD_H__
 

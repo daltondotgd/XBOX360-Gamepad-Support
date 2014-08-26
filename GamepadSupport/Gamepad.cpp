@@ -1,3 +1,8 @@
+/* Copyright (c) 2014 Krzysztof Pachulski
+* License: The MIT License (MIT)
+* MIT License page: http://opensource.org/licenses/MIT
+*/
+
 #include "Gamepad.h"
 
 #pragma comment(lib, "Xinput.lib")
