@@ -24,7 +24,7 @@ Usage
   }
 ```
 
-Getting analog values:
+Getting analog values (returns [-1, 1]):
 ```cpp
   float walkX = gamepad.leftStick().x;
   float walkY = gamepad.leftStick().y;
@@ -45,13 +45,13 @@ Getting analog values:
   }
 ```
 
-Getting trigger values:
+Getting trigger values (returns [0, 1]):
 ```cpp
   float rt = gamepad.rightTrigger();
   float lt = gamepad.leftTrigger();
 ```
 
-Getting button state:
+Getting button state (returns {0, 1}):
 ```cpp
   // same for B, X, Y, RB, LB, RightStick, LeftStick, Start, Back and the Guide button
   int valueOfA = gamepad.button(Gamepad::Button::A);
@@ -59,6 +59,7 @@ Getting button state:
   int dPadRight = gamepad.button(Gamepad::DPad::Right);
 ```
 
+(returns {true, false}):
 ```cpp
   // returns true only once - when A was just pressed
   gamepad.buttonDown(Gamepad::Button::A);
@@ -68,9 +69,9 @@ Getting button state:
   gamepad.buttonUp(Gamepad::Button::A);
 ```
 
-Vibrating:
+Vibrations (Rumble):
 ```cpp
-  float leftVibration = 0.75f;
-  float rightVibration = 0.4f;
+  float leftVibration = 0.75f; // should be from [0, 1]
+  float rightVibration = 0.4f; // should be from [0, 1]
   gamepad.vibrate(leftVibration, rightVibration);
 ```
