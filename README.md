@@ -32,6 +32,9 @@ Getting analog values:
   float lookX = gamepad.rightStick().x;
   float lookY = gamepad.rightStick().y;
   
+  float doSthElseX = gamepad.dPad().x;
+  float doSthElseY = gamepad.dPad().y;
+  
   // you can also check for analog being in it's DEADZONE,
   // but it will still return { 0.0f, 0.0f } if so
   // if you really want to check for deadzone, do the following:
@@ -50,11 +53,10 @@ Getting trigger values:
 
 Getting button state:
 ```cpp
-  int valueOfA = gamepad.button(Gamepad::Button::A);
   // same for B, X, Y, RB, LB, RightStick, LeftStick, Start, Back and the Guide button
+  int valueOfA = gamepad.button(Gamepad::Button::A);
   
   int dPadRight = gamepad.button(Gamepad::DPad::Right);
-  // I will add a digital-joystick behaviour to DPad soon
 ```
 
 ```cpp
