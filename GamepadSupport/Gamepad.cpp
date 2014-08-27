@@ -4,6 +4,8 @@
 */
 
 #include "Gamepad.h"
+#include <cmath>
+#include <cfloat>
 
 #pragma comment(lib, "Xinput.lib")
 
@@ -96,6 +98,28 @@ Gamepad::Value2d Gamepad::rightStick()
     value.x = (static_cast<float>(x) / (x < 0 ? 32768.0f : 32767.0f));
     value.y = (static_cast<float>(y) / (y < 0 ? 32768.0f : 32767.0f));
     value.dead = false;
+
+    return value;
+}
+
+Gamepad::Value2d Gamepad::dPad()
+{
+    Value2d value;
+    value.x = 0;
+    value.y = 0;
+    value.dead = true;
+
+    if (this->buttonsCurrentlyPressed[DPad::Right])
+        value.x += 1;
+    if (this->buttonsCurrentlyPressed[DPad::Left])
+        value.x -= 1;
+    if (this->buttonsCurrentlyPressed[DPad::Up])
+        value.y += 1;
+    if (this->buttonsCurrentlyPressed[DPad::Down])
+        value.y -= 1;
+
+    if (abs(value.x) > FLT_EPSILON || abs(value.y) > FLT_EPSILON)
+        value.dead = false;
 
     return value;
 }

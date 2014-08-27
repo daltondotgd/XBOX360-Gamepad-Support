@@ -30,6 +30,8 @@ int main()
         auto leftAnalog = gamepad.leftStick();
         auto rightAnalog = gamepad.rightStick();
 
+        auto dPad = gamepad.dPad();
+
         auto leftTrigger = gamepad.leftTrigger();
         auto rightTrigger = gamepad.rightTrigger();
 
@@ -37,6 +39,8 @@ int main()
             std::cout << "Left analog: (" << leftAnalog.x << ", " << leftAnalog.y << ")" << std::endl;
         if (!rightAnalog.dead)
             std::cout << "Right analog: (" << rightAnalog.x << ", " << rightAnalog.y << ")" << std::endl;
+        if (!dPad.dead)
+            std::cout << "DPad: (" << dPad.x << ", " << dPad.y << ")" << std::endl;
 
         if (leftTrigger > 0)
             std::cout << "Left trigger: " << leftTrigger << std::endl;

@@ -89,6 +89,7 @@ public:
 
     Value2d leftStick();
     Value2d rightStick();
+    Value2d dPad();
 
     float leftTrigger();
     float rightTrigger();
